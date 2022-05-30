@@ -70,6 +70,18 @@
     "webWorker": {
       "aliases": ["web-worker"],
       "extends": "@schematics/angular:webWorker"
+    },
+    "ionicfeature": {
+      "aliases": [ "if" ],
+      "factory": "./ionic-feature",
+      "schema": "./ionic-feature/schema.json",
+      "description": "Add feature module"
+    },
+    "ionicfeaturecomponentv6": {
+      "aliases": ["ifc"],
+      "factory": "./ionic-feature-component",
+      "schema": "./ionic-feature-component/schema.json",
+      "description": "Add feature component"
     }
   }
 }
