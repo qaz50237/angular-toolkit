@@ -77,7 +77,7 @@
       "schema": "./ionic-feature/schema.json",
       "description": "Add feature module"
     },
-    "ionicfeaturecomponentv6": {
+    "ionicfeaturecomponent": {
       "aliases": ["ifc"],
       "factory": "./ionic-feature-component",
       "schema": "./ionic-feature-component/schema.json",

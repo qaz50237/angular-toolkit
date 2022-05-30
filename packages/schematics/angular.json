@@ -151,13 +151,13 @@
     }
   },
   "cli": {
-    "defaultCollection": "@ionic/angular-toolkit"
+    "defaultCollection": "@weijen/angular-toolkit"
   },
   "schematics": {
-    "@ionic/angular-toolkit:component": {
+    "@weijen/angular-toolkit:component": {
       "styleext": "scss"
     },
-    "@ionic/angular-toolkit:page": {
+    "@weijen/angular-toolkit:page": {
       "styleext": "scss"
     }
   }

@@ -1,5 +1,5 @@
 {
-  "version": "independent",
+  "version": "6.1.1",
   "packages": ["packages/*"],
   "command": {
     "bootstrap": {

@@ -151,7 +151,7 @@ function addImportToImports(host: Tree, options: ComponentOptions): void {
 
 export default function (options: ComponentOptions): Rule {
   return async (host: Tree) => {
-    console.log('default options: ' + JSON.stringify(options));
+    // console.log('default options: ' + JSON.stringify(options));
     if (!options.project) {
       throw new SchematicsException('Option (project) is required.');
     }
@@ -160,15 +160,15 @@ export default function (options: ComponentOptions): Rule {
 
     const workspace = await getWorkspace(host);
     const project = workspace.projects.get(options.project);
-    console.log('project: ' + JSON.stringify(project));
+    // console.log('project: ' + JSON.stringify(project));
     if (project && options.path === undefined) {
       options.path = buildDefaultPath(project);
     }
 
     const parsedPath = parseName(options.path as string, options.name);
-    console.log('parsedPath: ', JSON.stringify(parsedPath));
+    // console.log('parsedPath: ', JSON.stringify(parsedPath));
     const featureName = parsedPath.path.split('/').pop();
-    console.log('featureName: ', featureName);
+    // console.log('featureName: ', featureName);
     options.name = parsedPath.name;
     options.path = parsedPath.path;
     options.featureName = featureName;

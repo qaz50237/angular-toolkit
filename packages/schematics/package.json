@@ -1,6 +1,6 @@
 {
-  "name": "@ionic/angular-toolkit",
-  "version": "6.1.0",
+  "name": "@weijen/angular-toolkit",
+  "version": "6.1.2",
   "license": "MIT",
   "description": "Schematics for @ionic/angular apps.",
   "homepage": "https://ionicframework.com/",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/angular-toolkit.git"
+    "url": "https://github.com/qaz50237/angular-toolkit.git"
   },
   "bugs": {
     "url": "https://github.com/ionic-team/angular-toolkit/issues"

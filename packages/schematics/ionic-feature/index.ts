@@ -28,9 +28,9 @@ import { InsertChange } from '../util/change';
 import type { Schema as PageOptions } from './schema';
 
 function findRoutingModuleFromOptions(host: Tree, options: ModuleOptions): Path | undefined {
-  console.log('findRoutingModuleFromOptions');
+  // console.log('findRoutingModuleFromOptions');
 
-  console.log('findRoutingModuleFromOptions options:' + JSON.stringify(options));
+  // console.log('findRoutingModuleFromOptions options:' + JSON.stringify(options));
 
   // eslint-disable-next-line no-prototype-builtins
   if (options.hasOwnProperty('skipImport') && options.skipImport) {
@@ -60,12 +60,12 @@ function findRoutingModuleFromOptions(host: Tree, options: ModuleOptions): Path 
 }
 
 function findRoutingModule(host: Tree, generateDir: string): Path {
-  console.log('findRoutingModule');
-  console.log('findRoutingModule host: ' + JSON.stringify(host));
-  console.log('findRoutingModule generateDir: ' + generateDir);
+  // console.log('findRoutingModule');
+  // console.log('findRoutingModule host: ' + JSON.stringify(host));
+  // console.log('findRoutingModule generateDir: ' + generateDir);
   let dir: DirEntry | null = host.getDir('/' + generateDir);
 
-  console.log('findRoutingModule dir: ' + JSON.stringify(dir));
+  // console.log('findRoutingModule dir: ' + JSON.stringify(dir));
   const routingModuleRe = /-routing\.module\.ts/;
 
   while (dir) {
@@ -87,10 +87,10 @@ function findRoutingModule(host: Tree, generateDir: string): Path {
 }
 
 function addRouteToNgModule(options: PageOptions): Rule {
-  console.log('addRouteToNgModule options: ' + JSON.stringify(options));
+  // console.log('addRouteToNgModule options: ' + JSON.stringify(options));
   const { module } = options;
 
-  console.log('addRouteToNgModule module: ' + JSON.stringify(module));
+  // console.log('addRouteToNgModule module: ' + JSON.stringify(module));
   if (!module) {
     throw new SchematicsException('module option is required.');
   }
@@ -178,7 +178,7 @@ function addRouteToRoutesArray(
 }
 
 export default function (options: PageOptions): Rule {
-  console.log('export default options:' + JSON.stringify(options));
+  // console.log('export default options:' + JSON.stringify(options));
   return async (host: Tree) => {
     if (!options.project) {
       throw new SchematicsException('Option (project) is required.');
@@ -193,7 +193,7 @@ export default function (options: PageOptions): Rule {
     options.module = findRoutingModuleFromOptions(host, options);
 
     const parsedPath = parseName(options.path as string, options.name);
-    console.log('parsedPath: ' + JSON.stringify(parsedPath));
+    // console.log('parsedPath: ' + JSON.stringify(parsedPath));
     options.name = parsedPath.name;
     options.path = parsedPath.path + `/features/`;
     options.selector = options.selector ? options.selector : buildSelector(options, project?.prefix ?? 'app');
