@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { CommonComponentsModule } from '@ktbComponent/common-components.module';
 
-import { <%= classify(name) %>PageRoutingModule } from './<%= dasherize(name) %>-routing.module';
+import { <%= classify(name) %>RoutingModule } from './<%= dasherize(name) %>-routing.module';
 
 import { <%= classify(name) %>FeatureLoader } from './<%= dasherize(name) %>.feature-loader';
 
