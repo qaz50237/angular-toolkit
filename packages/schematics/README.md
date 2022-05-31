@@ -10,8 +10,8 @@ schematics .:page 'ttttt' --debug=false --project=app  --styleext=scss
 schematics .:component 'ttttt/input' --debug=false --project=app  --styleext=scss
 schematics .:ionicfeature --name='test' --debug=false
 schematics .:ionicfeaturev6 --name='test' --debug=false --project=app --styleext=scss
-schematics .:ionicfeaturev6 --name='native-bridge-demo' --debug=false --project=app --styleext=scss
-schematics .:ionicfeaturecomponentv6 'native-bridge-demo/input' --debug=false --project=app  --styleext=scss
+schematics .:ionicfeature --name='native-bridge-demo' --debug=false --project=app --styleext=scss
+schematics .:ionicfeaturecomponent 'native-bridge-demo/input' --debug=false --project=app  --styleext=scss
  --path='src/app/features' 
 
 findRoutingModuleFromOptions options:{"project":"app","name":"ttttt","path":"/src/app","styleext":"css","spec":true,"flat":false,"routePath":""}

@@ -4,11 +4,15 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
+import { TranslateModule } from '@ngx-translate/core';
+
 import { CommonComponentsModule } from '@ktbComponent/common-components.module';
 
 import { <%= classify(name) %>RoutingModule } from './<%= dasherize(name) %>-routing.module';
 
 import { <%= classify(name) %>FeatureLoader } from './<%= dasherize(name) %>.feature-loader';
+
+import { <%= classify(name) %>FeatureManager } from './<%= dasherize(name) %>.feature-manager';
 
 @NgModule({
   imports: [
@@ -16,8 +20,10 @@ import { <%= classify(name) %>FeatureLoader } from './<%= dasherize(name) %>.fea
     CommonComponentsModule,
     FormsModule,
     IonicModule,
+    TranslateModule,
     <%= classify(name) %>RoutingModule
   ],
-  declarations: [<%= classify(name) %>FeatureLoader]
+  declarations: [<%= classify(name) %>FeatureLoader],
+  providers:[<%= classify(name) %>FeatureManager]
 })
 export class <%= classify(name) %>Module {}
