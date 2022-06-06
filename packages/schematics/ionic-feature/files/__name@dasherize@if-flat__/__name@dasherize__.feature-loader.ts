@@ -9,11 +9,16 @@ import { ActivatedRoute, Params } from '@angular/router';<% } %>
 export class <%= classify(name) %>FeatureLoader implements OnInit {<% if(routePath) { %>
 
   params: Params;<% } %>
+  isSuccess = false;
 
   constructor(<% if(routePath) { %>private route: ActivatedRoute<% } %>) { }
 
   ngOnInit() {<% if(routePath) { %>
     this.params = this.route.snapshot.params;<% } %>
+  }
+
+  Start(){
+    this.isSuccess = true;
   }
 
 }

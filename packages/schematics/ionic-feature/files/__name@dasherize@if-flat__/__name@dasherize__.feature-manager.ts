@@ -4,7 +4,7 @@ import { KTBPIBFeatures } from "@ktbConstants/ktbpibfeatures";
 import { KtbFeatureManager } from "@ktbService/ktb-feature-manager";
 
 @Injectable()
-export class <%= classify(name) %>FeatureManage extends KtbFeatureManager {<% if(routePath) { %>
+export class <%= classify(name) %>FeatureManager extends KtbFeatureManager {<% if(routePath) { %>
 
   params: Params;<% } %>
   //提供BasePage存取featureId
