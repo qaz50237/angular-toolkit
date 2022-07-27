@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';<% if(routePath) { %>
 import { ActivatedRoute, Params } from '@angular/router';<% } %>
+import { ContentService } from '@ktbService/content.service';
+import { <%= classify(name) %>FeatureManager } from './<%= dasherize(name) %>.feature-manager';
 
 @Component({
   selector: 'feature-loader',
@@ -11,10 +13,19 @@ export class <%= classify(name) %>FeatureLoader implements OnInit {<% if(routePa
   params: Params;<% } %>
   isSuccess = false;
 
-  constructor(<% if(routePath) { %>private route: ActivatedRoute<% } %>) { }
+  constructor(
+    private fm: <%= classify(name) %>FeatureManager,
+    private contentService: ContentService,
+    <% if(routePath) { %>private route: ActivatedRoute<% } %>
+  ) { }
 
-  ngOnInit() {<% if(routePath) { %>
+  ngOnInit() {
+    console.log('<%= classify(name) %>FeatureLoader ngOnInit');
+    this.fm.initFeatureRouteHistory(this.contentService.featureParam);
+    <% if(routePath) { %>
     this.params = this.route.snapshot.params;<% } %>
+
+    setTimeout(()=>{this.Start()},1000);
   }
 
   Start(){

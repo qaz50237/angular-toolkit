@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
 import { TranslateModule } from '@ngx-translate/core';
 
 import { CommonComponentsModule } from '@ktbComponent/common-components.module';
+
+import { PipesModule } from '@ktbPipe/pipes.module';
 
 import { <%= classify(name) %>RoutingModule } from './<%= dasherize(name) %>-routing.module';
 
@@ -18,7 +20,8 @@ import { <%= classify(name) %>FeatureManager } from './<%= dasherize(name) %>.fe
   imports: [
     CommonModule,
     CommonComponentsModule,
-    FormsModule,
+    PipesModule,
+    ReactiveFormsModule,
     IonicModule,
     TranslateModule,
     <%= classify(name) %>RoutingModule

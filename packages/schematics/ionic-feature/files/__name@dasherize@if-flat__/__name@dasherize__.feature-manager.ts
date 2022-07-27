@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';<% if(routePath) { %>
 import { ActivatedRoute, Params } from '@angular/router';<% } %>
-import { KTBPIBFeatures } from "@ktbConstants/ktbpibfeatures";
+import { KTBWUFeatures } from "@ktbConstants/ktbwufeatures";
 import { KtbFeatureManager } from "@ktbService/ktb-feature-manager";
 
 @Injectable()
@@ -9,7 +9,7 @@ export class <%= classify(name) %>FeatureManager extends KtbFeatureManager {<% i
   params: Params;<% } %>
   //提供BasePage存取featureId
   get featureId(): string {
-    return KTBPIBFeatures.<%= classify(name) %>;
+    return KTBWUFeatures.<%= classify(name) %>;
   }
 
   init() {

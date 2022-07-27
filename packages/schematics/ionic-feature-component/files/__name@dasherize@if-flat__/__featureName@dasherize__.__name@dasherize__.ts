@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { BasePage } from '@ktbComponent/base-page/base-page';
 import { <%= classify(featureName) %>FeatureManager } from '../<%= dasherize(featureName) %>.feature-manager';
 
 @Component({
@@ -7,11 +8,19 @@ import { <%= classify(featureName) %>FeatureManager } from '../<%= dasherize(fea
   styleUrls: ['./<%= dasherize(featureName) %>.<%= dasherize(name) %>.<%= styleext %>'],
 })
 export class <%= classify(featureName) %><%= classify(name) %> implements OnInit {
+  @ViewChild(BasePage) basePage: BasePage;
 
   constructor(
     private fm: <%= classify(featureName) %>FeatureManager,
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('<%= classify(featureName) %> ngOnInit')
+  }
+
+  ionViewWillEnter(){
+    console.log('ionViewWillEnter')
+    this.basePage.FeatureManager = this.fm;
+  }
 
 }
